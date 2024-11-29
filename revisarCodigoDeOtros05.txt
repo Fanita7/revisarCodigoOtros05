@@ -1,0 +1,39 @@
+package codigoOtro05;
+
+import java.util.Scanner;
+
+public class codigoOtro05 {
+
+	public static void main(String[] args) {
+		// l programa toma un número (ingresado por el usuario), analiza cada uno de los dígitos y los clasifica como afortunados o no afortunados. Luego, determina si el número es "afortunado", de acuerdo a la cantidad de dígitos afortunados comparada con los no afortunados.
+		Scanner scanner = new Scanner(System.in); // se agrega scanner
+		
+		System.out.print("Introduzca un número: ");
+		int ni = scanner.nextInt(); //int de entero, en lugar de line
+		int c = ni;
+		
+		int afo = 0;
+		int noAfo = 0;
+		
+		while (ni > 0) {
+			int digito = ni %10; //se quitó int
+			 if (digito == 3 || digito == 7 || digito == 8 || digito == 9) { //se quitaron los parentesis extras
+				 	afo++;
+		      } else {
+		    	  	noAfo++;
+		      }
+			 ni/=10;
+			 if (afo > noAfo) {
+				  System.out.println("El " + c + " es un número afortunado.");
+			    } else {
+			      System.out.println("El " + c + " no es un número afortunado.");
+			    }
+			 scanner.close(); // se cierra scanner
+			 
+		}
+	  
+	   
+		
+	}
+
+}
